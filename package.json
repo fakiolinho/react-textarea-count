@@ -1,6 +1,6 @@
 {
   "name": "react-textarea-count",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple textarea chars counter for React",
   "main": "dist/react-textarea-count.js",
   "repository": {
