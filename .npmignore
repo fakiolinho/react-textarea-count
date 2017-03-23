@@ -4,3 +4,6 @@
 /.travis.yml
 /__tests__/
 /coverage/
+/.idea/
+/.jshintignore
+/.jshintrc
