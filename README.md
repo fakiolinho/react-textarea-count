@@ -75,7 +75,7 @@ and output:
 Property  	| 	Type		|	Default		|	  Description
 :-----------------------|:-----------------------------|:--------------|:--------------------------------
 `countLimit` |   `number` | `0` | Chars limit. It is optional and if it is not used then chars limit is not shown
-`countShow ` | `bool` | `true` | Just in case you want to hide the counter you can set this to `true`
+`countShow ` | `bool` | `true` | Just in case you want to hide the counter you can set this to `false`
 
 ## License
 
