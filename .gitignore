@@ -89,6 +89,9 @@ typings/
 # dotenv environment variables file
 .env
 
+.jshintignore
+.jshintrc
+
 
 ### Test ###
 ### Ignore all files that could be used to test your code and
