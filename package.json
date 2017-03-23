@@ -3,11 +3,22 @@
   "version": "1.0.0",
   "description": "Simple textarea chars counter for React",
   "main": "dist/react-textarea-count.js",
-  "scripts": {
-    "build": "babel ./src/react-textarea-count.jsx -o ./dist/react-textarea-count.js",
-    "test": "jest",
-    "lint": "esw ./src/react-textarea-count.js --fix --watch --color"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fakiolinho/react-textarea-count.git"
   },
+  "scripts": {
+    "build": "rimraf dist && mkdir dist && babel ./src/react-textarea-count.jsx -o ./dist/react-textarea-count.js",
+    "prepublish": "npm run build",
+    "test": "jest",
+    "lint": "eslint ./src/react-textarea-count.jsx --color",
+    "lint:fix": "esw ./src/react-textarea-count.jsx --fix --watch --color",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "travis": "npm run build && npm test"
+  },
+  "pre-commit": [
+    "lint"
+  ],
   "keywords": [
     "react",
     "javascript",
@@ -20,7 +31,7 @@
     "email": "m.fakiolas@hotmail.gr",
     "url": "https://about.me/marios.fakiolas"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.0",
@@ -29,6 +40,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
     "bem-cn": "^2.1.3",
+    "coveralls": "^2.12.0",
     "enzyme": "^2.7.1",
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
@@ -37,9 +49,11 @@
     "eslint-plugin-react": "^6.10.3",
     "eslint-watch": "^3.0.1",
     "jest": "^19.0.2",
+    "pre-commit": "^1.2.2",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "rimraf": "^2.6.1"
   },
   "peerDependencies": {
     "react": "^15.4.2",

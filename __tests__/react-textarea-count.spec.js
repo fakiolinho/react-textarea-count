@@ -59,10 +59,9 @@ describe('test Textarea', () => {
     expect(enzymeWrapper.find('span.textarea__count').text()).toEqual('8/5');
   });
 
-  it('should show have error class when longer text is added, countLimit prop is passed & countValidation is true', () => {
+  it('should show have error class when longer text is added, countLimit prop is passed', () => {
     const { enzymeWrapper } = mountTest(Textarea, {
       countLimit: 5,
-      countValidation: true,
     });
 
     enzymeWrapper.node.textarea.value = 'My input';
@@ -71,22 +70,9 @@ describe('test Textarea', () => {
     expect(enzymeWrapper.find('span.textarea__count').hasClass('textarea__count--error')).toBeTruthy();
   });
 
-  it('should not have an error class when longer text is added, countLimit prop is passed & countValidation is false', () => {
+  it('should not have an error class when shorter text is added, countLimit prop is passed', () => {
     const { enzymeWrapper } = mountTest(Textarea, {
       countLimit: 5,
-      countValidation: false,
-    });
-
-    enzymeWrapper.node.textarea.value = 'My input';
-    enzymeWrapper.find('textarea').simulate('input');
-
-    expect(enzymeWrapper.find('span.textarea__count').hasClass('textarea__count--error')).toBeFalsy();
-  });
-
-  it('should not have an error class when shorter text is added, countLimit prop is passed & countValidation is false', () => {
-    const { enzymeWrapper } = mountTest(Textarea, {
-      countLimit: 5,
-      countValidation: false,
     });
 
     enzymeWrapper.node.textarea.value = 'My';
@@ -95,10 +81,8 @@ describe('test Textarea', () => {
     expect(enzymeWrapper.find('span.textarea__count').hasClass('textarea__count--error')).toBeFalsy();
   });
 
-  it('should not have an error class when longer text is added, countLimit prop is not passed & countValidation is true', () => {
-    const { enzymeWrapper } = mountTest(Textarea, {
-      countValidation: false,
-    });
+  it('should not have an error class when text is added & countLimit prop is not passed', () => {
+    const { enzymeWrapper } = mountTest(Textarea);
 
     enzymeWrapper.node.textarea.value = 'My input';
     enzymeWrapper.find('textarea').simulate('input');

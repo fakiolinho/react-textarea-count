@@ -14,6 +14,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -64,16 +66,22 @@ var Textarea = function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      var _props2 = this.props,
+          countLimit = _props2.countLimit,
+          countValidation = _props2.countValidation,
+          countShow = _props2.countShow,
+          restProps = _objectWithoutProperties(_props2, ['countLimit', 'countValidation', 'countShow']);
+
       return _react2.default.createElement(
         'div',
         { className: 'textarea__wrapper' },
-        _react2.default.createElement('textarea', _extends({}, this.props, {
+        _react2.default.createElement('textarea', _extends({}, restProps, {
           ref: function ref(_ref2) {
             return _this2.textarea = _ref2;
           },
           onInput: this.handleChange
         })),
-        this.renderCount()
+        countShow && this.renderCount()
       );
     }
   }]);
@@ -83,10 +91,12 @@ var Textarea = function (_Component) {
 
 Textarea.propTypes = {
   countLimit: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
-  countValidation: _react.PropTypes.bool
+  countValidation: _react.PropTypes.bool,
+  countShow: _react.PropTypes.bool
 };
 Textarea.defaultProps = {
   countLimit: 0,
-  countValidation: false
+  countValidation: false,
+  countShow: true
 };
 exports.default = Textarea;

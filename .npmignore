@@ -1,0 +1,6 @@
+/.npmignore
+/.gitignore
+/.babelrc
+/.travis.yml
+/__tests__/
+/coverage/

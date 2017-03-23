@@ -6,13 +6,11 @@ export default class Textarea extends Component {
       PropTypes.number,
       PropTypes.string,
     ]),
-    countValidation: PropTypes.bool,
     countShow: PropTypes.bool,
   };
 
   static defaultProps = {
     countLimit: 0,
-    countValidation: false,
     countShow: true,
   };
 
@@ -27,8 +25,8 @@ export default class Textarea extends Component {
   };
 
   renderCount() {
-    const { countLimit, countValidation } = this.props;
-    const className = `textarea__count${countValidation && (this.textarea && this.textarea.value.length) > countLimit ? ' textarea__count--error' : ''}`;
+    const { countLimit } = this.props;
+    const className = `textarea__count${this.textarea && countLimit && this.textarea.value.length > countLimit ? ' textarea__count--error' : ''}`;
 
     return (
       <span className={className}>
@@ -38,7 +36,7 @@ export default class Textarea extends Component {
   }
 
   render() {
-    const { countLimit, countValidation, countShow, ...restProps } = this.props;
+    const { countLimit, countShow, ...restProps } = this.props;
 
     return (
       <div className="textarea__wrapper">
