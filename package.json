@@ -1,0 +1,59 @@
+{
+  "name": "react-textarea-count",
+  "version": "1.0.0",
+  "description": "Simple textarea chars counter for React",
+  "main": "dist/react-textarea-count.js",
+  "scripts": {
+    "build": "babel ./src/react-textarea-count.jsx -o ./dist/react-textarea-count.js",
+    "test": "jest",
+    "lint": "esw ./src/react-textarea-count.js --fix --watch --color"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "babel",
+    "jest",
+    "enzyme"
+  ],
+  "author": {
+    "name": "Fakiolas Marios",
+    "email": "m.fakiolas@hotmail.gr",
+    "url": "https://about.me/marios.fakiolas"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-eslint": "^7.2.0",
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "bem-cn": "^2.1.3",
+    "enzyme": "^2.7.1",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-watch": "^3.0.1",
+    "jest": "^19.0.2",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "peerDependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "jest": {
+    "transform": {
+      ".*": "./node_modules/babel-jest"
+    },
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/*.jsx",
+      "!src/utils/*.js"
+    ]
+  }
+}
