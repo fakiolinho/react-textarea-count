@@ -92,6 +92,9 @@ typings/
 .jshintignore
 .jshintrc
 
+# Dist dir
+dist/
+
 
 ### Test ###
 ### Ignore all files that could be used to test your code and
