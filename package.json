@@ -13,7 +13,7 @@
     "test": "jest",
     "lint": "eslint ./src/react-textarea-count.jsx --color",
     "lint:fix": "esw ./src/react-textarea-count.jsx --fix --watch --color",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "travis": "npm run build && npm test && npm run coveralls"
   },
   "pre-commit": [
