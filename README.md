@@ -1,6 +1,6 @@
 # react-textarea-count
 
-![](https://travis-ci.org/fakiolinho/react-textarea-count.svg?branch=master)
+![](https://travis-ci.org/fakiolinho/react-textarea-count.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/fakiolinho/react-textarea-count/badge.svg?branch=master)](https://coveralls.io/github/fakiolinho/react-textarea-count?branch=master)
 
 Simple textarea chars counter for React
 
